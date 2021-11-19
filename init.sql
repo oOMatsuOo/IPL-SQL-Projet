@@ -29,7 +29,7 @@ CREATE TABLE projet.paes (
 
 CREATE TABLE projet.prerequis (
   id_ue INTEGER NOT NULL REFERENCES projet.ues(id_ue),
-  id_ue_prerequis INTEGER NOT NULL REFERENCES projet.prerequis(id_ue),
+  id_ue_prerequis INTEGER NOT NULL REFERENCES projet.ues(id_ue),
   PRIMARY KEY (id_ue, id_ue_prerequis)
 );
 
@@ -44,3 +44,12 @@ CREATE TABLE projet.ues_en_cours (
    id_ue INTEGER NOT NULL REFERENCES projet.ues(id_ue),
   PRIMARY KEY (code_pae,id_ue)
 );
+
+CREATE OR REPLACE FUNCTION projet.paeEtudiants()
+RETURNS SETOF RECORD as $$
+DECLARE
+BEGIN
+
+END;
+$$ LANGUAGE plpgsql;
+
