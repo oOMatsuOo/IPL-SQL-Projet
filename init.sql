@@ -45,6 +45,7 @@ CREATE TABLE projet.ues_en_cours (
   PRIMARY KEY (code_pae,id_ue)
 );
 
+<<<<<<< HEAD
 CREATE OR REPLACE FUNCTION projet.paeEtudiants()
 RETURNS SETOF RECORD as $$
 DECLARE
@@ -53,3 +54,14 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+=======
+
+--1. Ajouter une UE.
+CREATE OR REPLACE FUNCTION projet.ajouterUe (code_ue CHARACTER VARYING (100), nom CHARACTER VARYING (100), block CHARACTER (1), nbr_credits INTEGER, nbr_inscrits INTEGER)
+	RETURNS VOID AS $$
+	DECLARE
+	BEGIN
+		INSERT INTO projet.ues VALUES (DEFAULT,code_ue,nom,DEFAULT,nbr_credits,nbr_inscrits);
+	END;
+$$ LANGUAGE plpgsql;
+>>>>>>> Estelle
