@@ -29,7 +29,7 @@ CREATE TABLE projet.paes (
 
 CREATE TABLE projet.prerequis (
   id_ue INTEGER NOT NULL REFERENCES projet.ues(id_ue),
-  id_ue_prerequis INTEGER NOT NULL REFERENCES projet.prerequis(id_ue),
+  id_ue_prerequis INTEGER NOT NULL REFERENCES projet.ues(id_ue),
   PRIMARY KEY (id_ue, id_ue_prerequis)
 );
 
